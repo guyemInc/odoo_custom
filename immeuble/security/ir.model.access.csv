@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_immeuble_tag,Accès utilisateur Immeuble Tag,model_immeuble_tag,base.group_user,1,1,1,1
+access_immeuble_state,Accès utilisateur Immeuble State,model_immeuble_state,base.group_user,1,1,1,1
+access_immeuble_offre,Accès utilisateur Immeuble Offre,model_immeuble_offre,base.group_user,1,1,1,1

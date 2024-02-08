@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form-->
+    <record id="infrastructure_form_view" model="ir.ui.view">
+        <field name="name">infrastructure.form</field>
+        <field name="model">infrastructure</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View TREE-->
+    <record id="infrastructure_tree_view" model="ir.ui.view">
+        <field name="name">infrastructure.tree</field>
+        <field name="model">infrastructure</field>
+        <field name="arch" type="xml">
+             <tree string="">
+                   <field name="name"/>    
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- Action-->
+    <record id="action_infrastructure" model="ir.actions.act_window">
+        <field name="name">infrastructure</field>
+        <field name="res_model">infrastructure</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>        
+    </record>
+
+    <!-- Voir affichage dans Menu item => immeubles_views.xml -->
+    <!-- <menuitem
+        id="infrastructure_menu"
+        name="infrastructure"
+        action="action_infrastructure"
+        parent="contacts.menu_contacts"
+        sequence="5"/> -->
+</odoo>

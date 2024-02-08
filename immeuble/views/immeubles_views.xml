@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form-->
+    <record id="immeuble_form_view" model="ir.ui.view">
+        <field name="name">immeuble.form</field>
+        <field name="model">immeuble</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <!-- Définir le nombre de colonnes par Form -->
+                    <group col="3">
+                        <group>
+                            <field name="name"></field>
+                            <field name="owner_id"></field>
+                            <field name="state_id"></field>                        
+                        </group>
+                        <group>
+                            <field name="adress_street"></field>
+                            <field name="adress_town"></field>
+                            <field name="country_id"></field>                            
+                        </group>
+                        <group>
+                            <field name="offre_count"></field>                        
+                            <field name="building_value"></field>
+                            <field name="floor_count"></field>
+                            <!-- <field name="immeuble_tag_ids"></field> -->
+                            <!-- <field name="category_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" placeholder="Tags"  groups="hr.group_hr_user"/> -->
+                            <!-- Celui ci dessous est ok                                         Et va prendre la couleur du Tag -->
+                            <field name="immeuble_tag_ids" widget="many2many_tags" options="{'color_field': 'color', 'no_create_edit': True}" /> 
+                            
+                            <!-- <field name="immeuble_tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/> -->
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Offres Achat" name="immeuble_offers" autofocus="autofocus">
+                            <!-- <field name="child_ids" mode="tree" > -->
+                                <!-- <kanban>
+                                    Voir owner_vews.xml
+                                </kanban> -->
+                                <!-- <form string="Contact / Address">
+                                    Voir owner_vews.xml
+                                </form> -->
+                            <!-- </field> -->
+                            <field name="immeuble_offer_ids">
+                                <!--  Possibilite saisie dans onglet   -->
+                                <tree 
+                                    string="Immeuble"
+                                    editable="bottom"
+                                    delete="0"
+                                >
+                                    <field name="name"/>    
+                                    <field name="immeuble_id"/>   
+                                    <field name="owner_id"/>    
+                                    <field name="offreur_id"/>    
+                                    <field name="offre_value"/>                 
+                                </tree>
+                            </field>
+                        </page>                        
+                        <!-- <page name='internal_notes' string="Internal Notes">
+                            <field name="comment" placeholder="Internal notes..."/>
+                        </page> -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View TREE -->
+    <record id="immeuble_tree_view" model="ir.ui.view">
+        <field name="name">immeuble.tree</field>
+        <field name="model">immeuble</field>
+        <field name="arch" type="xml">
+             <tree string="" delete="1">
+                   <field name="name"/>    
+                   <!-- <field name="state_id"> -->
+                   <field name="building_value"/> 
+                   <field name="offre_count"/>                     
+                   <field name="floor_count"/> 
+                   <field name="adress_street"/> 
+                   <field name="adress_town"/>                    
+            </tree>
+
+        </field>
+    </record>
+
+    <!-- View TREE From model.offer-->
+    
+
+    <!-- Action-->
+    <record id="action_immeuble" model="ir.actions.act_window">
+        <field name="name">immeuble</field>
+        <field name="res_model">immeuble</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>        
+    </record>
+
+  <!-- Version solo -->
+    <!-- <menuitem
+        id="immeuble_menu"
+        name="Immeuble"
+        action="action_immeuble"
+        parent="contacts.menu_contacts"
+        sequence="2"/> -->
+   
+   <!-- Version menu item list "sans action pour le premier élément  "-->
+    <menuitem id="immeuble_menu"
+        name="Immeubles Info"
+        parent="contacts.menu_contacts"
+        sequence="3"/>
+
+    <menuitem id="immeuble_menu_form"
+        action="action_immeuble"
+        name="Immeubles"
+        sequence="1" 
+        parent="immeuble_menu"/>
+    
+    <menuitem id="immeuble_state_menu"
+        action="action_immeuble_state"
+        name="Statut"
+        sequence="2" 
+        parent="immeuble_menu"/>
+
+    <menuitem id="immeuble_tag_menu"
+        action="action_immeuble_tag"
+        name="Tags"
+        sequence="3" 
+        parent="immeuble_menu"/>
+
+    <menuitem id="immeuble_offre_menu"
+        action="action_immeuble_offre"
+        name="Offres"
+        sequence="4" 
+        parent="immeuble_menu"/>
+
+    <!-- Sous liste apres principaux  cf '<menuitem id="menu_localisation" name="Localization"'-->
+   <menuitem id="menu_test_autres" name="Autres..."
+        parent="immeuble_menu" sequence="5"/>
+
+    <menuitem id="infrastructure_menu"
+        action="action_infrastructure" 
+        name="infrastructure"
+        parent="menu_test_autres"
+        sequence="1"/>
+    
+
+
+  <!-- Ici un example -->
+    <!-- <menuitem id="res_partner_menu_config"
+        name="Configuration"
+        parent="menu_contacts"
+        groups="base.group_system"
+        sequence="2"/>
+    <menuitem id="menu_partner_category_form"
+        action="base.action_partner_category_form"
+        name="Contact Tags"
+        sequence="1" parent="res_partner_menu_config"/> -->
+
+</odoo>

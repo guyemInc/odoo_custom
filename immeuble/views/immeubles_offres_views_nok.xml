@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form-->
+    <record id="immeuble_offre_form_view" model="ir.ui.view">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <!-- <field name="name">immeuble.offre.form</field>
+        <field name="model">immeuble.offre</field> -->
+        <!-- <field name="inherit_id" ref="base.immeuble_form_view"/> -->
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <!--          Titre menu        Objet   -->
+                <page string="Offres" name = "offre">
+                    <field name="immeuble_ids">
+                            <tree 
+                                string="Offre"
+                                editable="bottom"
+                                delete="0"                                
+                            >
+                            <field name="offre_value"/>    
+                            <field name="offre_id"/>                                          
+                        </tree>
+                    </field>
+                </page>
+            </xpath>            
+        </field>
+    </record>
+</odoo>

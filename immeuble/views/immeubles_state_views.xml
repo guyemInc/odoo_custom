@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form -->
+    <record id="immeuble_state_form_view" model="ir.ui.view">
+        <field name="name">State</field>
+        <field name="model">immeuble.state</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- View TREE-->
+    <record id="immeuble_state_tree_view" model="ir.ui.view">
+        <field name="name">State</field>
+        <field name="model">immeuble.state</field>
+        <field name="arch" type="xml">
+             <tree string="">
+                   <field name="name"/>    
+                   <field name="description"/> 
+            </tree>
+
+        </field>
+    </record>
+    
+
+    <!-- Action-->
+    <record id="action_immeuble_state" model="ir.actions.act_window">
+        <field name="name">State</field>
+        <field name="res_model">immeuble.state</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>        
+    </record>
+
+     <!-- Voir affichage dans Menu item => immeubles_views.xml -->
+    <!-- <menuitem
+        id="immeuble_state_menu"
+        name="Statut (Immeuble)"
+        action="action_immeuble_state"
+        parent="contacts.menu_contacts"
+        sequence="4"/> -->
+</odoo>

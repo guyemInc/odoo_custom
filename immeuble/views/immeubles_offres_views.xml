@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form non voulue pour les offres-->
+    
+    <!-- View TREE  voulue pour edition en masse-->
+    <record id="immeuble_offre_tree_view" model="ir.ui.view">
+
+        <field name="name">Offre</field>
+        <field name="model">immeuble.offre</field>
+        <field name="arch" type="xml">
+             <!-- <tree string=""> -->
+             <!-- Ajouter possibilité d'édition en masse -->
+             <tree editable="top" create="1">
+                   <field name="name"/>    
+                   <field name="immeuble_id"/>   
+                   <field name="owner_id"/>    
+                   <field name="offreur_id"/>    
+                   <field name="offre_value"/> 
+            </tree>
+
+        </field>
+    </record>    
+
+    <!-- TREE for Immeuble Form -->
+    <!-- <record id="immeuble_form_view_offers" model="ir.ui.view">
+        <field name="name">immeuble.form</field>
+        <field name="model">immeuble</field>
+        <field name="inherit_id" ref="immeuble_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+               
+                <page string="Immeuble" name = "immeuble">
+               
+                        <field name="immeuble_ids">
+               
+                            <tree editable="top" create="1">
+                                <field name="name"/>    
+                                <field name="immeuble_id"/>   
+                                <field name="owner_id"/>    
+                                <field name="offreur_id"/>    
+                                <field name="offre_value"/> 
+                            </tree>
+                        </field>
+                        <group name="name" string="Montant total">
+                            <field name="count_toto"></field>
+                        </group>
+                    </page>
+                </xpath>            
+        </field>
+    </record> -->
+
+    <!-- Action-->
+    <record id="action_immeuble_offre" model="ir.actions.act_window">
+        <field name="name">Offre</field>
+        <field name="res_model">immeuble.offre</field>
+        <!-- <field name="view_mode">tree,form,kanban,graph,pivot</field>         -->
+        <!-- Ajouter possibilité d'édition en masse -->
+        <field name="view_mode">tree</field>
+    </record>
+
+    <!-- <menuitem
+        id="immeuble_offre_menu"
+        name="Offres"
+        action="action_immeuble_offre"
+        parent="contacts.menu_contacts"
+        sequence="2"/> -->
+    
+</odoo>
