@@ -1,0 +1,15 @@
+  106  git status
+  108  git status
+  109  git init
+  110  git add *
+  111  git commit -am "Initial commit'
+  112  git commit -am 'Initial commit'
+  113  git config --global user.email "guyem@mailo.com"
+  114  git config --global user.name "Guyem"
+  115  git commit -am 'Initial commit'
+  116  git remote add origin https://github.com/guyemInc/odoo_custom.git
+  117  git branch -M main
+  118  git push -u origin main
+  119  git remote add origin https://github.com/guyemInc/odoo_custom.git
+  120  git push -u origin main
+  121  history | grep git > history_git_add.txt
