@@ -13,7 +13,10 @@ python3 odoo-bin -addons-path=addons -d formation
 ```
 psql
 exit
+```
 
+Fin paramétrages
+```
 cd odoo/
 python3 odoo-bin --addons-path=addons -d formation
 sudo apt-get -y install wkhtmltopdf
