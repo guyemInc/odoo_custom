@@ -39,7 +39,7 @@ class ImmeubleOffre(models.Model):
 
  
 
-    @api.onchange('offeur_id','immeuble_id','offre_value')
+    @api.onchange('offreur_id','immeuble_id','offre_value')
     def _onchange_offreur_id(self):
         if self.offreur_id and self.immeuble_id :
             # self.name = 'Une offre de '+self.offreur_id.name+ ' pour ' + self.immeuble_id.name + ' pour un montant de : '+str(self.offre_value)

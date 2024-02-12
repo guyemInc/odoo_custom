@@ -9,7 +9,8 @@
     'category': 'custom',
     'depends': [
         'base',
-        'contacts'
+        'contacts',
+        # 'sales'
     ],
     'data': [
         'security/ir.model.access.csv',

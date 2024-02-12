@@ -6,6 +6,11 @@ class ResPartner(models.Model):
     # _description = 'proprietaire'
     # _order = 'id desc'
 
+    description_test = fields.Char(
+        string='Description Custom',
+        required=False
+    )
+
     immeuble_ids = fields.One2many('immeuble', 'owner_id',  string='Proprietaire')
     # immeuble_ids = fields.One2many(
     #     'immeuble', 

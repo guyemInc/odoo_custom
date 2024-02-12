@@ -97,11 +97,24 @@ class Immeuble(models.Model):
         if res.owner_id :
             #res._add_tag_in_owner()
             # Ici maj de la valeur
-
-            # Ici maj en mode liste d'attributs
-            res.owner_id.write({
-                'name' : 'toto',
-                'phone' : '1234567890',
-                #'email' : 'test'
-            })
+            # res.owner_id.write({
+            #     'name' : 'toto',
+            #     'phone' : '1234567890',
+            #     email' : 'test'
+            # })
+            # Ici maj attribut custom
+            if res.owner_id.description_test != 'NoText' :
+                res.owner_id.write({
+                    # 'name' : 'toto',
+                    # 'phone' : '1234567890',
+                    'description_test' : res.owner_id.name + ' Add text from Immeuble function create if owner_id'
+                    #'email' : 'test'
+                })
+            else   :
+                res.owner_id.write({
+                    # 'name' : 'toto',
+                    # 'phone' : '1234567890',
+                    'description_test' : 'NoText'
+                    #'email' : 'test'
+                }) 
         return res
