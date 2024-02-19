@@ -28,7 +28,8 @@
                                 decoration-danger="building_value == 0"
                                 decoration-info="building_value > 0"
                             >
-                                <field name="name"/>    
+                                <field name="name"/>   
+                                <field name="owner_id"/>   
                                 <field name="state_id"/>
                                 <field name="building_value"/> 
                                 <field name="floor_count"/> 

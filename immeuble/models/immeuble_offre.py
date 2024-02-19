@@ -1,6 +1,8 @@
 from random import  randint
-from odoo import models, fields, api, _
-from odoo.exceptions import ValidationError
+from odoo import models, fields, api
+# # syntaxe lors du cours ? provoque nonn pas Erreur, mais info syntaxe nok
+# from odoo import models, fields, api, _
+# from odoo.exceptions import ValidationError
 
 class ImmeubleOffre(models.Model):
     # _inherit = 'immeuble'         # non pas d'hetirage dans ce cas passer par relation

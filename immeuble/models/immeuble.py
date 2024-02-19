@@ -90,7 +90,6 @@ class Immeuble(models.Model):
                     ('immeuble_id', '=', record.id)
                 ])
             )
-
     @api.model
     def create(self,vals):
         res = super(Immeuble, self).create(vals)
@@ -107,8 +106,8 @@ class Immeuble(models.Model):
                 res.owner_id.write({
                     # 'name' : 'toto',
                     # 'phone' : '1234567890',
-                    'description_test' : res.owner_id.name + ' Add text from Immeuble function create if owner_id'
-                    #'email' : 'test'
+                     'description_test' : res.owner_id.name + ' Add text from Immeuble function create if owner_id'
+                    # 'description_test' : ' Blabla from Immeuble function create if owner_id'
                 })
             else   :
                 res.owner_id.write({

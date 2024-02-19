@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data noupdate="1">    
+    <!-- 1 = pas de maj ok mais bon et comment alors ?-->
+    <!-- <data noupdate="0"> -->
         <record id="res_partner_category" model="res.partner.category">
             <field name="name">Propritaire</field>
             <field name="color" eval="6"/>
-        </record>    
-    </data>    
+        </record>  
+    </data> 
 </odoo>

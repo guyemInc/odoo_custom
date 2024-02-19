@@ -20,7 +20,8 @@
         'views/infrastructures_views.xml',
         'views/immeubles_offres_views.xml',
         'views/owner_views.xml',
-        'data/immeuble_tag_data.xml'
+        'data/immeuble_tag_data.xml',
+        # 'data/immeuble_tag_data_2.xml'
     ],
     # 'demo': [
     #     ''

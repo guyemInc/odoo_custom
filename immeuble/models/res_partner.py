@@ -1,4 +1,5 @@
-from odoo import models, api, fields
+from odoo import models, api, fields, _
+from odoo.exceptions import ValidationError
 
 class ResPartner(models.Model):
     _inherit = 'res.partner'
@@ -50,31 +51,38 @@ class ResPartner(models.Model):
     def write(self,vals):
         # Appel des méthodes de la class supérieur ()
         #       en d'autre terme appel des méthodes permettant d'écrire en bdd
-        # res = super(ResPartner, self).write(vals)
+        ###res = super(ResPartner, self).write(vals)
+        # # tentative effacement TAG.. sans doute mieux dans un event onload res_partner
+        # if len(self.immeuble_ids) == 0 :
+        #     vals.update({'category_id' :
+        #                     #  [(4, 0, [record.env.ref('immeuble.res_partner_category').id])]
+        #                     #  Key (category_id)=(0) is not present in table "res_partner_category".
+        #                       [(0, 8)]
+        #                      })  
         for record in self :
-            #res._add_tag_in_owner()
-            if vals.get('immeuble_ids') :
-                # import pdb; pdb.set_trace()
+            
+            # if vals.get('immeuble_ids') :
+            if len(record.immeuble_ids) > 0 :
+                ###res._add_tag_in_owner()
                 # update du dictionnaire
-
-                #Si choix ajout tag category ( celui defini dans le data... xml
-                # vals.update({'category_id' :
-                #              [(4, 0, [record.env.ref('immeuble.res_partner_category').id])]
-                #              })  
-                #Si choix remplacement
-                vals.update({
-                    'category_id' :
-                        [(6, 0, [record.env.ref('immeuble.res_partner_category').id])]
-                    })  
+                # Si choix ajout tag category ( celui defini dans le data... xml
+                vals.update({'category_id' :
+                            #  [(4, 0, [record.env.ref('immeuble.res_partner_category').id])]
+                            #  Key (category_id)=(0) is not present in table "res_partner_category".
+                              [(4, 8, [record.env.ref('immeuble.res_partner_category').id])]
+                             })  
+                #               galère de trouver id =8 => "category_id": [    7,    8  ],
+                #               tar = 1
+                # Si choix remplacement
+                # vals.update({
+                #     'category_id' :
+                #         [(6, 0, [record.env.ref('immeuble.res_partner_category').id])]
+                #     })  
+                # import pdb; pdb.set_trace()
         return super(ResPartner, self).write(vals)
         
-
+    ## Test fonction nok
     # def _add_tag_in_owner(self):
     #     tag = self.env.ref('res.partner.category')
     #     # ajout du tag voulu
-    #     self.id.category_id = [()]
-            
-
-    
-
-    
+    #     self.id.category_id = [(4, tag.id, 0)]
