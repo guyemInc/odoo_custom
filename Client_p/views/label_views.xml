@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form-->
+    <record id="label_form_view" model="ir.ui.view">
+        <field name="name">label.form</field>
+        <field name="model">label</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+       <!-- Action-->
+    <record id="action_label" model="ir.actions.act_window">
+        <field name="name">label</field>
+        <field name="res_model">label</field>
+        <field name="view_mode">tree,form,kanban,graph,pivot</field>        
+    </record>
+    <!-- Version menu item list "sans action pour le premier élément  "-->
+    <menuitem
+        id="label_menu_in_contacts"
+        name="Label"
+        action="action_label"
+        parent="contacts.menu_contacts"
+        sequence="4"/> 
+</odoo>

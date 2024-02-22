@@ -140,8 +140,7 @@
         name="infrastructure"
         parent="menu_test_autres"
         sequence="1"/>
-    
-
+ 
 
   <!-- Ici un example -->
     <!-- <menuitem id="res_partner_menu_config"
