@@ -16,7 +16,7 @@
         </field>
     </record>
        <!-- Action-->
-    <record id="action_label" model="ir.actions.act_window">
+    <record model="ir.actions.act_window" id="action_label" >
         <field name="name">label</field>
         <field name="res_model">label</field>
         <field name="view_mode">tree,form,kanban,graph,pivot</field>        
@@ -27,5 +27,12 @@
         name="Label"
         action="action_label"
         parent="contacts.menu_contacts"
-        sequence="4"/> 
+        sequence="5"/> 
+    <!--My Dashboard Main Menu Access-->
+    <menuitem
+            id="label_menu_in_main_app"
+            name="Label"
+            action="action_label"
+            parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
+            sequence="3"/>
 </odoo>

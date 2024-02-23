@@ -1,5 +1,5 @@
 {
-    'name': 'Client_p',
+    'name': 'Essai',
     'version': '1.0',
     'description': 'Client fictif',
     'summary': 'Sommaire tout simple',
@@ -13,6 +13,7 @@
         # 'sales'
     ],
     'data': [        
+        'security/ir.model.access.csv',
         'views/label_views.xml',
     ],
     # 'demo': [
