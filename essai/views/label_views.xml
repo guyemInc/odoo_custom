@@ -34,5 +34,5 @@
             name="Label"
             action="action_label"
             parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
-            sequence="3"/>
+            sequence="10"/>
 </odoo>
