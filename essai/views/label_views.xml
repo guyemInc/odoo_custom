@@ -15,24 +15,31 @@
             </form>
         </field>
     </record>
-       <!-- Action-->
+    <!-- Action-->
     <record model="ir.actions.act_window" id="action_label" >
         <field name="name">label</field>
         <field name="res_model">label</field>
         <field name="view_mode">tree,form,kanban,graph,pivot</field>        
     </record>
-    <!-- Version menu item list "sans action pour le premier élément  "-->
+    <!-- Version menu item list dans Contacts-->
     <menuitem
         id="label_menu_in_contacts"
         name="Label"
         action="action_label"
         parent="contacts.menu_contacts"
-        sequence="5"/> 
-    <!--My Dashboard Main Menu Access-->
+        sequence="2"/> 
+    <!-- Version menu item list dans Projects-->
     <menuitem
+        id="label_menu_in_projects"
+        name="Essai Refs"
+        action="action_label"
+        parent="project.menu_main_pm"
+         sequence="3"/>       <!-- Juste after "Tasks menu in Projet menus"-->
+    <!--My Dashboard Main Menu Access  => nok 24/02/2024 -->
+    <!-- <menuitem
             id="label_menu_in_main_app"
             name="Label"
             action="action_label"
             parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
-            sequence="10"/>
+            sequence="10"/> -->
 </odoo>
