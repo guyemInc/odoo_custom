@@ -12,3 +12,11 @@ class Profil(models.Model):
     description = fields.Char(
         string='Description'
     )
+    owner_ref_id = fields.Many2one('owner.ref',
+        string='Editeur Profil', 
+        ondelete='restrict')
+    
+    profil_version_ids = fields.One2many('profil.version',
+         'profil_id',
+        string='Versions'
+        )

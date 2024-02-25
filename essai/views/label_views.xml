@@ -8,11 +8,40 @@
             <form string="">
                 <sheet>
                     <group>
+                        <field name="owner_ref_id"></field>
                         <field name="name"></field>
                         <field name="description"></field>
                     </group>
+                    <notebook colspan="4">
+                        <page string="Versions" name="label_versions" autofocus="autofocus">
+                            <field name="label_version_ids">
+                                <!--  Possibilite saisie dans onglet   -->
+                                <tree 
+                                    string="Version"
+                                    editable="bottom"
+                                    delete="0"
+                                >
+                                    <field name="name"/>    
+                                    <field name="code"/>   
+                                    <field name="date_start"/> 
+                                    <field name="date_end"/>                 
+                                </tree>
+                            </field>
+                        </page>    
+                    </notebook>
                 </sheet>
             </form>
+        </field>
+    </record>
+    <!-- View TREE-->
+    <record id="ilabel_vtree_view" model="ir.ui.view">
+        <field name="name">Labels</field>
+        <field name="model">label</field>
+        <field name="arch" type="xml">
+             <tree string="">
+                   <field name="owner_ref_id"/>    
+                   <field name="name"/> 
+            </tree>
         </field>
     </record>
     <!-- Action-->
@@ -49,15 +78,50 @@
             sequence="1" 
             parent="essai_ref_menu_in_projects"/>
 
-        <menuitem id="essai_ref_label_versions"
+        <!-- <menuitem id="essai_ref_label_versions"
             name="Labels versions"
             action="action_label_version"
             sequence="2" 
-            parent="essai_ref_menu_in_projects"/>
+            parent="essai_ref_menu_in_projects"/> -->
         
         <menuitem id="essai_ref_profils"
             name="Profils"
             action="action_profil"
             sequence="3" 
             parent="essai_ref_menu_in_projects"/>
+
+        <menuitem id="essai_ref_repository"
+            name="Referentiels"
+            action="action_repository"
+            sequence="4" 
+            parent="essai_ref_menu_in_projects"/>
+
+
+    <menuitem id="essai_ref_admin_in_projects" name="Administration"
+            parent="essai_ref_menu_in_projects" sequence="5"/>
+
+        <menuitem id="admin_essai_ref_onwers"
+            name="Référents"
+            action="action_owner_ref"
+            sequence="1" 
+            parent="essai_ref_admin_in_projects"/>
+
+        <menuitem id="admin_essai_ref_label_versions"
+            name="Version de labels"
+            action="action_label_version"
+            sequence="2" 
+            parent="essai_ref_admin_in_projects"/>
+
+        <menuitem id="admin_essai_ref_profil_versions"
+            name="Version de profils"
+            action="action_profil_version"
+            sequence="3" 
+            parent="essai_ref_admin_in_projects"/>
+
+        <!-- <menuitem id="admin_essai_ref_repository_versions"
+            name="Version de référentiels"
+            action="action_repository_version"
+            sequence="4" 
+            parent="essai_ref_admin_in_projects"/> -->
+
 </odoo>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <!-- View Form-->
-    <record id="profil_form_view" model="ir.ui.view">
-        <field name="name">profil.form</field>
-        <field name="model">profil</field>
+    <record id="repository_form_view" model="ir.ui.view">
+        <field name="name">repository.form</field>
+        <field name="model">repository</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
                     <group>
+                        <field name="owner_ref_id"></field>
+                        <field name="label_id"></field>
                         <field name="name"></field>
                         <field name="description"></field>
-                        <field name="owner_ref_id"></field>
                     </group>
                     <notebook colspan="4">
-                        <page string="Versions" name="profil_versions" autofocus="autofocus">
-                            <field name="profil_version_ids">
-                                <!--  Possibilite saisie dans onglet   -->
+                        <page string="Versions" name="repository_versions" autofocus="autofocus">
+                            <field name="repository_version_ids">
                                 <tree 
                                     string="Version"
                                     editable="bottom"
@@ -23,8 +23,7 @@
                                 >
                                     <field name="name"/>    
                                     <field name="code"/>   
-                                    <field name="date_start"/> 
-                                    <field name="date_end"/>                 
+                                    <field name="date_start"/>                  
                                 </tree>
                             </field>
                         </page>    
@@ -34,9 +33,9 @@
         </field>
     </record>
     <!-- Action-->
-    <record model="ir.actions.act_window" id="action_profil" >
-        <field name="name">profil</field>
-        <field name="res_model">profil</field>
+    <record model="ir.actions.act_window" id="action_repository" >
+        <field name="name">Référentiel</field>
+        <field name="res_model">repository</field>
         <field name="view_mode">tree,form,kanban,graph,pivot</field>        
     </record>
 </odoo>

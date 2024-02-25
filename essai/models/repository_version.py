@@ -1,11 +1,11 @@
 from odoo import models, fields
 
-class LabelVersion(models.Model):
-    _name = 'label.version'
-    _description = 'label version'
+class RepositoryVersion(models.Model):
+    _name = 'repository.version'
+    _description = 'repository version'
     _order = 'id desc'
 
-    label_id = fields.Many2one('label', 
+    repository_id = fields.Many2one('repository', 
         ondelete='cascade',        
     )
     name = fields.Char(
@@ -25,3 +25,5 @@ class LabelVersion(models.Model):
     date_end = fields.Date(
         string='Date clôture'
     )
+
+    # label_version_partners_ids

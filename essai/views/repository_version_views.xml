@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="label_version_form_view" model="ir.ui.view">
+    <record id="repository_version_form_view" model="ir.ui.view">
         <field name="name">Versions</field>
-        <field name="model">label.version</field>
+        <field name="model">repository.version</field>
         <field name="arch" type="xml">
             <form string="">
                 <sheet>
                     <group>
-                        <field name="label_id"></field>
+                        <field name="repository_id"></field>
                         <field name="name"></field>
                         <field name="description"></field>
                         <field name="code"></field>
@@ -21,12 +21,12 @@
     </record>
 
     <!-- View TREE-->
-    <record id="ilabel_version_tree_view" model="ir.ui.view">
+    <record id="repository_version_tree_view" model="ir.ui.view">
         <field name="name">Versions</field>
-        <field name="model">label.version</field>
+        <field name="model">repository.version</field>
         <field name="arch" type="xml">
              <tree string="">
-                   <field name="label_id"/>    
+                   <field name="repository_id"/>    
                    <field name="name"/> 
                    <field name="code"/> 
                    <field name="date_start"/> 
@@ -39,9 +39,9 @@
     
 
     <!-- Action-->
-    <record id="action_label_version" model="ir.actions.act_window">
+    <record id="action_repository_version" model="ir.actions.act_window">
         <field name="name">Versions</field>
-        <field name="res_model">label.version</field>
+        <field name="res_model">repository.version</field>
         <field name="view_mode">tree,form,kanban,graph,pivot</field>        
     </record>
 

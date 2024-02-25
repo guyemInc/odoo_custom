@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- View Form-->
+    <record id="owner_form_view" model="ir.ui.view">
+        <field name="name">Propriétaire Label</field>
+        <field name="model">owner.ref</field>
+        <field name="arch" type="xml">
+            <form string="">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                        <field name="description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- Action-->
+    <record model="ir.actions.act_window" id="action_owner_ref" >
+        <field name="name">owner</field>
+        <field name="res_model">owner.ref</field>
+        <field name="view_mode">tree,form</field>        
+    </record>
+</odoo>

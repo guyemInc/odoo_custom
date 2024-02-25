@@ -17,7 +17,11 @@
         'security/ir.model.access.csv',
         'views/label_views.xml',
         'views/label_version_views.xml',
+        'views/owner_ref_views.xml',
         'views/profil_views.xml',
+        'views/profil_version_views.xml',
+        'views/repository_views.xml',
+        'views/repository_version_views.xml',
     ],
     # 'demo': [
     #     ''

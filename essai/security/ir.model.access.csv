@@ -1,4 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-label_client_access,Accès utilisateur Label csv,model_label,base.group_user,1,1,1,1
-label_versions_access,Accès utilisateur Label csv,model_label_version,base.group_user,1,1,1,1
-profil_client_access,Accès utilisateur Label csv,model_profil,base.group_user,1,1,1,1
+label_access,Accès utilisateur Label csv,model_label,base.group_user,1,1,1,1
+label_versions_access,Accès utilisateur Label Version csv,model_label_version,base.group_user,1,1,1,1
+owner_access,Accès utilisateur Propriétaire csv,model_owner_ref,base.group_user,1,1,1,1
+profil_access,Accès utilisateur Profil csv,model_profil,base.group_user,1,1,1,1
+profil_version_access,Accès utilisateur Profil Version csv,model_profil_version,base.group_user,1,1,1,1
+repository_access,Accès utilisateur Repository csv,model_repository,base.group_user,1,1,1,1
+repository_version_access,Accès utilisateur Repository Version csv,model_repository_version,base.group_user,1,1,1,1

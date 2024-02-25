@@ -1,11 +1,11 @@
 from odoo import models, fields
 
-class LabelVersion(models.Model):
-    _name = 'label.version'
-    _description = 'label version'
+class ProfilVersion(models.Model):
+    _name = 'profil.version'
+    _description = 'profil version'
     _order = 'id desc'
 
-    label_id = fields.Many2one('label', 
+    profil_id = fields.Many2one('profil', 
         ondelete='cascade',        
     )
     name = fields.Char(

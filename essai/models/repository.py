@@ -1,12 +1,12 @@
 from odoo import models, fields, api
 
-class Label(models.Model):
-    _name = 'label'
-    _description = 'label'
+class Repository(models.Model):
+    _name = 'repository'
+    _description = 'repository'
     _order = 'id desc'
 
     name = fields.Char(
-        string='Label',
+        string='Référentiel',
         required=True
     )
     description = fields.Char(
@@ -16,8 +16,12 @@ class Label(models.Model):
         string='Editeur Label', 
         ondelete='restrict'
         )
-    label_version_ids = fields.One2many('label.version',
-         'label_id',
+    label_id = fields.Many2one('label',
+        string='Label associé', 
+        ondelete='restrict'
+        )
+    repository_version_ids = fields.One2many('repository.version',
+         'repository_id',
         string='Versions'
         )
     
