@@ -9,13 +9,15 @@
     'category': 'custom',
     'depends': [
         'base',
-        'contacts',
+        # 'contacts',
         # 'projects',
         # 'sales'
     ],
     'data': [        
         'security/ir.model.access.csv',
         'views/label_views.xml',
+        'views/label_version_views.xml',
+        'views/profil_views.xml',
     ],
     # 'demo': [
     #     ''

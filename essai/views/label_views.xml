@@ -28,18 +28,36 @@
         action="action_label"
         parent="contacts.menu_contacts"
         sequence="2"/> 
-    <!-- Version menu item list dans Projects-->
-    <menuitem
+    <!-- Version menu item list dans Projects. Task : Add "Essai Refs" menu access in Project's Home-->
+    <!-- <menuitem
         id="label_menu_in_projects"
         name="Essai Refs"
         action="action_label"
         parent="project.menu_main_pm"
-         sequence="3"/>       <!-- Juste after "Tasks menu in Projet menus"-->
-    <!--My Dashboard Main Menu Access  => nok 24/02/2024 -->
-    <!-- <menuitem
-            id="label_menu_in_main_app"
-            name="Label"
+         sequence="3"/>   -->
+
+    <!--My Main Menu Access  => nok 25/02/2024 -->
+    <!-- Version menu item list "sans action pour le premier élément  "-->
+    <menuitem id="essai_ref_menu_in_projects"
+        name="Essai Refs"
+        parent="project.menu_main_pm"
+        sequence="3"/>
+
+        <menuitem id="essai_ref_labels"
+            name="Labels"
             action="action_label"
-            parent="spreadsheet_dashboard.spreadsheet_dashboard_menu_root"
-            sequence="10"/> -->
+            sequence="1" 
+            parent="essai_ref_menu_in_projects"/>
+
+        <menuitem id="essai_ref_label_versions"
+            name="Labels versions"
+            action="action_label_version"
+            sequence="2" 
+            parent="essai_ref_menu_in_projects"/>
+        
+        <menuitem id="essai_ref_profils"
+            name="Profils"
+            action="action_profil"
+            sequence="3" 
+            parent="essai_ref_menu_in_projects"/>
 </odoo>
