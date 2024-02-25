@@ -13,8 +13,26 @@
                         <field name="code"></field>
                         <field name="date_start"></field>
                         <field name="date_end"></field>
-                        <!-- <field name="color" widget="color_picker"/>  -->
+                        <!-- <field name="color" widget="color_picker"/>  -->                        
+                        <!-- Test widget many2many -->
+                        <field name="label_version_partners_ids" widget="many2many_checkboxes"></field>
+                        <!-- <field name="profil_version_partners_ids" widget="many2many_checkboxes"></field>                         -->
                     </group>
+                    <!-- <notebook colspan="4">
+                        <page string="Label version associables" name="repository_labels_external" autofocus="autofocus">
+                            <field name="label_version_partners_ids">
+                                <tree 
+                                    string="Version"
+                                    editable="bottom"
+                                    delete="0"
+                                >
+                                    <field name="name"/>    
+                                    <field name="code"/>   
+                                    <field name="date_start"/>                  
+                                </tree>
+                            </field>
+                        </page>    
+                    </notebook> -->
                 </sheet>
             </form>
         </field>

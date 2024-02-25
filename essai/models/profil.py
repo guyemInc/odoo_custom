@@ -16,7 +16,8 @@ class Profil(models.Model):
         string='Editeur Profil', 
         ondelete='restrict')
     
-    profil_version_ids = fields.One2many('profil.version',
-         'profil_id',
-        string='Versions'
-        )
+    # profil_version_ids = fields.One2many('profil.version',
+    #      'profil_id',
+    #     string='Versions',
+    #     required=False
+    #     )

@@ -118,10 +118,10 @@
             sequence="3" 
             parent="essai_ref_admin_in_projects"/>
 
-        <!-- <menuitem id="admin_essai_ref_repository_versions"
+        <menuitem id="admin_essai_ref_repository_versions"
             name="Version de référentiels"
             action="action_repository_version"
             sequence="4" 
-            parent="essai_ref_admin_in_projects"/> -->
+            parent="essai_ref_admin_in_projects"/>
 
 </odoo>

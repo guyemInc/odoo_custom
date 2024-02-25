@@ -26,4 +26,14 @@ class RepositoryVersion(models.Model):
         string='Date clôture'
     )
 
-    # label_version_partners_ids
+    # profil_version_partners_ids = fields.Many2many('profil.version',
+    #     'profil_version_id',
+    #     string='Profils associés',
+    #     required=False
+    # )
+    
+    label_version_partners_ids = fields.Many2many('label.version',
+        'label_version_id',
+        string='Labels associés',
+        required=False
+    )

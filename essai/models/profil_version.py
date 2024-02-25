@@ -25,3 +25,9 @@ class ProfilVersion(models.Model):
     date_end = fields.Date(
         string='Date clôture'
     )
+
+    # profil_version_repository_ids = fields.Many2many('repository.version',
+    #     'repository_version_id',
+    #     string='Référentiels compatibles'
+    # )
+

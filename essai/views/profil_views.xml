@@ -12,10 +12,9 @@
                         <field name="description"></field>
                         <field name="owner_ref_id"></field>
                     </group>
-                    <notebook colspan="4">
+                    <!-- <notebook colspan="4">
                         <page string="Versions" name="profil_versions" autofocus="autofocus">
-                            <field name="profil_version_ids">
-                                <!--  Possibilite saisie dans onglet   -->
+                            <field name="profil_version_ids">                                
                                 <tree 
                                     string="Version"
                                     editable="bottom"
@@ -28,7 +27,7 @@
                                 </tree>
                             </field>
                         </page>    
-                    </notebook>
+                    </notebook> -->
                 </sheet>
             </form>
         </field>
