@@ -15,6 +15,20 @@
                         <field name="date_end"></field>
                         <!-- <field name="color" widget="color_picker"/>  -->
                     </group>
+                    <notebook colspan="4">
+                        <page string="Repository versions" name="repository_version" autofocus="autofocus">
+                            <field name="profil_version_repository_ids">
+                                <tree 
+                                    string="Repositories"
+                                >
+                                    <field name="name"/>    
+                                    <field name="code"/>   
+                                    <field name="date_start"/>                  
+                                    <field name="date_end"/>                  
+                                </tree>
+                            </field>
+                        </page>    
+                    </notebook>
                 </sheet>
             </form>
         </field>

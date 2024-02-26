@@ -7,6 +7,7 @@ class LabelVersion(models.Model):
 
     label_id = fields.Many2one('label', 
         ondelete='cascade',        
+        onupdate='cascade'        
     )
     name = fields.Char(
         string='Nom',

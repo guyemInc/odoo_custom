@@ -7,6 +7,7 @@ class ProfilVersion(models.Model):
 
     profil_id = fields.Many2one('profil', 
         ondelete='cascade',        
+        onupdate='cascade' 
     )
     name = fields.Char(
         string='Nom',
@@ -26,8 +27,8 @@ class ProfilVersion(models.Model):
         string='Date clôture'
     )
 
-    # profil_version_repository_ids = fields.Many2many('repository.version',
-    #     'repository_version_id',
-    #     string='Référentiels compatibles'
-    # )
+    profil_version_repository_ids = fields.Many2many('repository.version',
+        #'repository_version_id',
+        string='Référentiels compatibles'
+    )
 
